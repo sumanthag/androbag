@@ -1,6 +1,8 @@
 package flipper.com.flipsilence;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -22,8 +24,12 @@ public class TimeSetter extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Setting an alarm...", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                Intent i = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
+                //i.putExtra(AlarmClock.EXTRA_HOUR, 9);
+                //i.putExtra(AlarmClock.EXTRA_MINUTES, 37);
+                startActivity(i);
             }
         });
     }
